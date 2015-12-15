@@ -1,0 +1,139 @@
+*
+{
+  padding: 0;
+  margin: 0;
+}
+body
+{
+  background-color: #1d0b17;
+}
+.header
+{
+  img
+  {
+    float: left;
+    margin: 20px 0 0 30px;
+  }
+  .header-1
+  {
+    display: block;
+    float: right;
+    font-family: "Calibri";
+    color: rgb(106, 91, 166);
+    margin:20px 50px 0 0;
+  }
+  .header-2
+  {
+    display: block;
+    font-family: Calibri;
+    font-size: 30pt;
+    float: left;
+    color: #d95ace;
+    margin: 50px 0 0 36px ;
+  }
+}
+
+.ceng1
+{
+  height:50px ;
+  width: 522px;
+  clear: both;
+}
+.titlebar
+{
+  display: block;
+  clear: both;
+  width: 400px;
+  height: 40px;
+  margin: 0px 0 0px 300px;
+  padding-top: 10px;
+  background-color: #a66156;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+  li
+  {
+    display: block;
+    width: 133px;
+    text-align: center;
+    line-height: 40px;
+    list-style: none;
+    float: left;
+    font-size: 25px;
+    color: white;
+
+    a
+    {
+      text-decoration: none;
+    }
+  }
+  .titlebar-2
+  {
+    z-index: 3;
+    a:link{color: white;}
+    a:visited{color:white;}
+    a:hover{color: red;text-decoration: underline;}
+    a:active{color: white;}
+  }
+  .titlebar-1 a
+  {
+    color: red;
+    text-decoration: underline;
+  }
+}
+
+.main
+{
+  width: 1000px;
+  height: 400px;
+  margin: 10px auto;
+  background-color: #1d0b17;
+
+  .mainleft
+  {
+    width: 200px;
+   // height: 300px;
+    float: left;
+    background-color: #1d3e81;
+    border-radius: 10px;
+
+    ul li
+    {
+      list-style: none;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      margin-left: -20px;
+      text-decoration: underline;
+    }
+  }
+
+  .mainright
+  {
+    width: 790px;
+    background-color: white;
+    height: 400px;
+    float: right;
+    border-radius: 20px;
+
+    h1,p
+    {
+      text-align: center;
+      text-indent: 10px;
+    }
+  }
+}
+.mainfooter
+{
+  img
+  {
+    margin-left: 500px;
+  }
+  li
+  {
+    margin: -24px 0 0 600px;
+    list-style: none;
+  }
+}
