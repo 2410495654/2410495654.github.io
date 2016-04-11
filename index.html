@@ -1,48 +1,69 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title></title>
     <style>
-        a{
+        *{
             margin: 0;
             padding: 0;
         }
-
-
-        body{
-            font-family: 宋体;
-            text-align: center
+        .main{
+            position: absolute;
+            width: 3000px;
+            height: 100%;
         }
-        hgroup{
-            margin: 5px;
+        .main1{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
         }
-        nav{
-            height: 40px;
-            background: #ff6600;
+        .main1 img{
+            height: 1000px;
+            width: 600px;
+        }
+        .main2{
+            position: fixed;
+            top: 0;
+            left: 800px;
+        }
+        .main2 h1{
+            position: fixed;
+            top: 50px;
+            left: 1300px;
+            font-size: 66px;
 
         }
-        nav li{
-            float: left;
-            background: black;
-            border-radius: 5px;
-            padding: 5px 10px;
-            margin: 10px 10px 10px 10px;
+        .main3{
+            position: absolute;
+            top: 300px;
+            left: 750px;
         }
-
+        .main4{
+            position: absolute;
+            top: 300px;
+            left: 2800px;
+        }
     </style>
 </head>
 <body>
-<header>
-    <hgroup>
-        <h1>header首页</h1>
-            <a href="in.html" >nav</a>
-            <a href="www.baidu.com">我的圆</a>
-    </hgroup>
-    <nav>
-       <li> <a href="我的圆.html">我的圆</a></li>
-        <li><a href="幽灵.html">幽灵</a></li>
-    </nav>
-</header>
+<div class="main">
+    <div class="main1">
+        <img src="1.jpg" />
+    </div>
+    <div class="main2">
+        <img src="8.jpg" />
+        <h1>MY BLOG</h1>
+    </div>
+    <div class="main3">
+        <h2>Github</h2>
+        <p>git clone http:// <br>cd test <br> change<br> git add .<br> git commit -m "change"<br>git push origin master</p>
+    </div>
+    <div class="main4">
+        <h2>Github</h2>
+        <p>git clone http:// <br>cd test <br> change<br> git add .<br> git commit -m "change"<br>git push origin master</p>
+    </div>
+</div>
 </body>
 </html>
