@@ -64,6 +64,13 @@
             </div>
         </div>
     </div>
+<script>
+	  $(function() {
+	      $.get('update.php?id=1',{r:Math.random()},function(num) {
+	          $('#hit').html(num);
+		      });
+		          }); 
+</script>
 <script type="text/javascript">
     $("#container").PageSwitch({
         direction:"herizontal"
