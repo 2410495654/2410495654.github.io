@@ -35,96 +35,157 @@ document.onkeydown=function(event){
         mvSuper(0,1);
     }
 };
-//移动机器人
+
 function mvRobot(){
-    for(var i=1;i<10;i++){
-        for(var j=1;j<10;j++){
+    for(var i=1;i<=10;i++){
+        for(var j=1;j<=10;j++){
             if(block[i][j]==3){
-                if(i<=startD[1]){
-                    if(j<=endD[1]){
-                        if(block[i][j+1]==2){
-                            drawBlock(i+1,j,"red");
-                            drawBlock(i,j,"white");
-                            block[i+1][j]=3;
-                            block[i][j]=0;
-                        }else {
-                            if(j-endD[1]>=i-startD[1]){
-                                drawBlock(i,j+1,"red");
-                                drawBlock(i,j,"white");
-                                block[i][j+1]=3;
-                                block[i][j]=0;
-                            }else if(j-endD[1]<i-startD[1]){
-                                drawBlock(i+1,j,"red");
-                                drawBlock(i,j,"white");
-                                block[i+1][j]=3;
-                                block[i][j]=0;
-                            }
-                        }
-                    }else{
-                        if(block[i][j+1]==2){
-                            drawBlock(i-1,j,"red");
-                            drawBlock(i,j,"white");
-                            block[i-1][j]=3;
-                            block[i][j]=0;
-                        }else{
-                            if(j-endD[1]>=i-startD[1]){
-                                drawBlock(i,j-1,"red");
-                                drawBlock(i,j,"white");
-                                block[i][j-1]=3;
-                                block[i][j]=0;
-                            }else if(j-endD[1]<i-startD[1]){
-                                drawBlock(i-1,j,"red");
-                                drawBlock(i,j,"white");
-                                block[i-1][j]=3;
-                                block[i][j]=0;
-                            }
-                        }
-                    }
-                }else{
-                    if(j<=endD[1]){
-                        if(block[i][j+1]==2){
-                            drawBlock(i+1,j,"red");
-                            drawBlock(i,j,"white");
-                            block[i+1][j]=3;
-                            block[i][j]=0;
-                        }else{
-                            if(j-endD[1]>=i-startD[1]){
-                                drawBlock(i,j+1,"red");
-                                drawBlock(i,j,"white");
-                                block[i][j+1]=3;
-                                block[i][j]=0;
-                            }else if(j-endD[1]<i-startD[1]){
-                                drawBlock(i+1,j,"red");
-                                drawBlock(i,j,"white");
-                                block[i+1][j]=3;
-                                block[i][j]=0;
-                            }
-                        }
-                    }else{
-                        if(block[i][j+1]==2){
-                            drawBlock(i-1,j,"red");
-                            drawBlock(i,j,"white");
-                            block[i-1][j]=3;
-                            block[i][j]=0;
-                        }else{
-                            if(j-endD[1]>=i-startD[1]){
-                                drawBlock(i,j-1,"red");
-                                drawBlock(i,j,"white");
-                                block[i][j-1]=3;
-                                block[i][j]=0;
-                            }else if(j-endD[1]<i-startD[1]){
-                                drawBlock(i-1,j,"red");
-                                drawBlock(i,j,"white");
-                                block[i-1][j]=3;
-                                block[i][j]=0;
-                            }
-                        }
-                    }
-                }
+                robot(i,j);
             }
         }
     }
 }
+function robot(i,j){
+    if(i<=startD[1]&&j<=endD[1]){
+        if(block[i][j]==2){
+            drawBlock(i+1,j,"red");
+            drawBlock(i,j,"white");
+            block[i+1][j]=3;
+            block[i][j]=0;
+        }else{
+            drawBlock(i,j+1,"red");
+            drawBlock(i,j,"white");
+            block[i][j+1]=3;
+            block[i][j]=0;
+        }
+    }else if(i>startD[1]&&j<=endD[1]){
+        if(block[i][j]==2){
+            drawBlock(i,j+1,"red");
+            drawBlock(i,j,"white");
+            block[i][j+1]=3;
+            block[i][j]=0;
+        }else{
+            drawBlock(i-1,j,"red");
+            drawBlock(i,j,"white");
+            block[i-1][j]=3;
+            block[i][j]=0;
+        }
+    }else if(i>startD[1]&&j>endD[1]){
+        if(block[i][j]==2){
+            drawBlock(i-1,j,"red");
+            drawBlock(i,j,"white");
+            block[i-1][j]=3;
+            block[i][j]=0;
+        }else{
+            drawBlock(i,j-1,"red");
+            drawBlock(i,j,"white");
+            block[i][j-1]=3;
+            block[i][j]=0;
+        }
+    }else if(i<=startD[1]&&j>endD[1]){
+        if(block[i][j]==2){
+            drawBlock(i,j-1,"red");
+            drawBlock(i,j,"white");
+            block[i][j-1]=3;
+            block[i][j]=0;
+        }else{
+            drawBlock(i+1,j,"red");
+            drawBlock(i,j,"white");
+            block[i+1][j]=3;
+            block[i][j]=0;
+        }
+    }
+}
+//移动机器人
+//function mvRobot(){
+//    for(var i=1;i<10;i++){
+//        for(var j=1;j<10;j++){
+//            if(block[i][j]==3){
+//                if(i<=startD[1]){
+//                    if(j<=endD[1]){
+//                        if(block[i][j+1]==2){
+//                            drawBlock(i+1,j,"red");
+//                            drawBlock(i,j,"white");
+//                            block[i+1][j]=3;
+//                            block[i][j]=0;
+//                        }else {
+//                            if(j-endD[1]>=i-startD[1]){
+//                                drawBlock(i,j+1,"red");
+//                                drawBlock(i,j,"white");
+//                                block[i][j+1]=3;
+//                                block[i][j]=0;
+//                            }else if(j-endD[1]<i-startD[1]){
+//                                drawBlock(i+1,j,"red");
+//                                drawBlock(i,j,"white");
+//                                block[i+1][j]=3;
+//                                block[i][j]=0;
+//                            }
+//                        }
+//                    }else{
+//                        if(block[i][j+1]==2){
+//                            drawBlock(i-1,j,"red");
+//                            drawBlock(i,j,"white");
+//                            block[i-1][j]=3;
+//                            block[i][j]=0;
+//                        }else{
+//                            if(j-endD[1]>=i-startD[1]){
+//                                drawBlock(i,j-1,"red");
+//                                drawBlock(i,j,"white");
+//                                block[i][j-1]=3;
+//                                block[i][j]=0;
+//                            }else if(j-endD[1]<i-startD[1]){
+//                                drawBlock(i-1,j,"red");
+//                                drawBlock(i,j,"white");
+//                                block[i-1][j]=3;
+//                                block[i][j]=0;
+//                            }
+//                        }
+//                    }
+//                }else{
+//                    if(j<=endD[1]){
+//                        if(block[i][j+1]==2){
+//                            drawBlock(i-1,j,"red");
+//                            drawBlock(i,j,"white");
+//                            block[i-1][j]=3;
+//                            block[i][j]=0;
+//                        }else{
+//                            if(j-endD[1]>=i-startD[1]){
+//                                drawBlock(i,j+1,"red");
+//                                drawBlock(i,j,"white");
+//                                block[i][j+1]=3;
+//                                block[i][j]=0;
+//                            }else if(j-endD[1]<i-startD[1]){
+//                                drawBlock(i+1,j,"red");
+//                                drawBlock(i,j,"white");
+//                                block[i+1][j]=3;
+//                                block[i][j]=0;
+//                            }
+//                        }
+//                    }else{
+//                        if(block[i][j+1]==2){
+//                            drawBlock(i+1,j,"red");
+//                            drawBlock(i,j,"white");
+//                            block[i+1][j]=3;
+//                            block[i][j]=0;
+//                        }else{
+//                            if(j-endD[1]>=i-startD[1]){
+//                                drawBlock(i,j-1,"red");
+//                                drawBlock(i,j,"white");
+//                                block[i][j-1]=3;
+//                                block[i][j]=0;
+//                            }else if(j-endD[1]<i-startD[1]){
+//                                drawBlock(i-1,j,"red");
+//                                drawBlock(i,j,"white");
+//                                block[i-1][j]=3;
+//                                block[i][j]=0;
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
 //移动hero
 function mvSuper(pX,pY){
     if(block[startD[1]-pX][endD[1]-pY]==0){//-1 0
